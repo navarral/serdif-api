@@ -8,17 +8,17 @@ The data set only requires location and time for each event.
 
 ## How to use serdif-api
 
-Environmental data sources for version 20211012T120000 in IE:
+### Environmental data sources for version 20211012T120000 in IE
 
 Albert Navarro-Gallinad. (2021). Weather and Air Quality data for Ireland as RDF data cube (20211012T120000) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5668287
 
-Data Provenance:
+### Data Provenance
 * Weather: [MetÉireann (met)](https://www.met.ie/climate/available-data/historical-data)
 * Air pollution: [European Environmental Agency (eea)](https://discomap.eea.europa.eu/map/fme/AirQualityExport.htm)
 * Data Period: 2000-2021
 * Country: Republic of Ireland (IE)
 
-Data Lineage:
+### Data Lineage
 * The activity describes a SPARQL query to associate environmental data 
 to particular health events by reasoning over location and time. 
 * The GeoSPARQL function geof:sfWithin is used to select environmental data within the region 
