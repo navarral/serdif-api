@@ -40,7 +40,7 @@ Activate the virtual environment: `source venv/bin/activate`
 
 Install the requirements: `pip install -r requirements.txt`
 
-Pass the following parameters to the `apidata_fromcsv.py script
+Pass the following parameters to the `apidata_fromcsv.py` script
 * **path**: path to the CSV file
 * **timeUnit**: temporal units for retrieved environmental data set from: hour, day, month or year
 * **spAgg**: spatio-temporal aggregation method for the environmental data sets from: AVG, SUM, MIN or MAX
