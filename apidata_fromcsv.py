@@ -72,17 +72,8 @@ print('Reading CSV file from input: ', csvFile, '\n')
 df = pd.read_csv(csvFile, converters={'region': lambda x: x.split(' ')})
 print(df, '\n')
 
-# Format columns for serdif apidata
-print('Converting CSV to python dictionary for the serdif apidata ...\n')
-df['event'] = 'http://example.org/ns#event-' + df['event']
-df.index = df['event']
-event_dict = df.transpose().to_dict()
-pprint(event_dict)
-
-# Query the data
-print('\nSending query https://serdif-example.adaptcentre.ie/ ...\n')
 exampleData = serdifDataAPI(
-    evEnvoDict=event_dict,
+    eventDF= df,
     # Select temporal units for the datasets used with environmental
     # data from: 'hour', 'day', 'month' or 'year'
     timeUnit=args.TimeUnit,
