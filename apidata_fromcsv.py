@@ -1,4 +1,4 @@
-from apidata.api_data import serdifDataAPI
+from openready.api_openready import serdifAPI
 import sys
 import pandas as pd
 from pprint import pprint
@@ -13,7 +13,12 @@ serdif_apidata_parser.add_argument(
     'Path',
     metavar='path',
     type=str,
-    help='the path to the csv file')
+    help='the path to the event data csv file')
+serdif_apidata_parser.add_argument(
+    'MetaPath',
+    metavar='metapath',
+    type=str,
+    help='the path to the metadata info csv file')
 serdif_apidata_parser.add_argument(
     'TimeUnit',
     metavar='timeUnit',
@@ -45,9 +50,13 @@ args = serdif_apidata_parser.parse_args()
 print(args)
 
 # Check if user arguments are valid
-csvFile = args.Path
-if not os.path.isfile(csvFile):
-    print('The path specified does not exist\n')
+dataFile = args.Path
+if not os.path.isfile(dataFile):
+    print('The data path specified does not exist\n')
+    sys.exit()
+metadataFile = args.MetaPath
+if not os.path.isfile(metadataFile) and args.DataFormat == 'RDF':
+    print('The metadata path specified does not exist (file required for RDF option)\n')
     sys.exit()
 if args.TimeUnit not in ['hour', 'day', 'month', 'year']:
     print('The time unit specified is not hour, day, month or year\n')
@@ -66,14 +75,23 @@ if not args.Password:
     sys.exit()
 
 # Import csv from command line
-print('Reading CSV file from input: ', csvFile, '\n')
+print('Reading data CSV file from input: ', dataFile, '\n')
 
 # Read region column as a list of regions
-df = pd.read_csv(csvFile, converters={'region': lambda x: x.split(' ')})
-print(df, '\n')
+ev_df = pd.read_csv(dataFile, converters={'region': lambda x: x.split(' ')})
+print(ev_df, '\n')
 
-exampleData = serdifDataAPI(
-    eventDF= df,
+if metadataFile == 'none' and args.DataFormat == 'CSV':
+    meta_df = pd.DataFrame({})
+else:
+    # Read metadata csv
+    print('Reading data CSV file from input: ', metadataFile, '\n')
+    meta_df = pd.read_csv(metadataFile)
+    print(meta_df, '\n')
+
+exampleData = serdifAPI(
+    eventDF=ev_df,
+    metadataDF=meta_df,
     # Select temporal units for the datasets used with environmental
     # data from: 'hour', 'day', 'month' or 'year'
     timeUnit=args.TimeUnit,
