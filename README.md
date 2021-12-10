@@ -62,14 +62,11 @@ The following instructions are Linux based.
 
 #### 3.1. Open a terminal in the project folder
 
-#### 3.2. Activate the virtual environment
-`source venv/bin/activate`
+#### 3.2. Activate the virtual environment: `source venv/bin/activate`
 
-#### 3.3. Install the requirements 
-`pip install -r requirements.txt`
+#### 3.3. Install the requirements: `pip install -r requirements.txt`
 
-#### 3.4. Check required parameters 
-`python apidata_fromcsv.py -h`
+#### 3.4. Check required parameters: `python apidata_fromcsv.py -h`
 
 #### 3.5. Pass the following parameters to the `apidata_fromcsv.py` script
    * **dataPath**: path to the event data csv file
@@ -89,10 +86,14 @@ The following instructions are Linux based.
 
     `python apidata_fromcsv.py event_data.csv none day AVG CSV username password`
 
-
 * Retrieving open-ready data for publication (`metadataPath: event_metadata.csv, dataFormat: RDF`) requires 
   an event metadata file such as [event_metadata.csv](https://github.com/navarral/serdif-api/blob/main/event_metadata.csv).
-* Open-ready data will be retrieved as a zip file that contains:
+
+  
+    `python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
+
+
+* Open-ready data will be retrieved as a zip file ([example](https://github.com/navarral/serdif-api/blob/main/ee-openready-20211012T120000-QT-20211209T184108.zip)) that contains:
   * (i) data as csv: environmental data associated to particular events as a datatable
   * (ii) data as rdf: environmental data associated to particular events as a graph 
   * (iii) metadata for publication as rdf: metadata record with generalized information about the data
@@ -102,4 +103,5 @@ The following instructions are Linux based.
   if published without approval from the Data Protection Officer (DPO) and data controller.
 
 
-    `python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
+
+
