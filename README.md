@@ -6,8 +6,6 @@ with individual events through location and time, irrespective of the data set.
 
 The data set only requires location and time for each event.
 
-## How to use serdif-api
-
 ### Environmental data sources for version 20211012T120000 in IE
 
 Albert Navarro-Gallinad. (2021). Weather and Air Quality data for Ireland as RDF data cube (20211012T120000) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5668287
@@ -26,6 +24,8 @@ of each event, and xsd:duration to filter a specific time window prior to the ev
 * Example fields:
   * region WEXFORD
   * time window with a duration of 4 DAYS lagged 5 DAYS from the event 
+
+## How to use serdif-api
 
 ### 1. Download serdif-api github repo
 [Download zip](https://github.com/navarral/serdif-api/archive/refs/heads/main.zip)
@@ -67,13 +67,30 @@ The following instructions are Linux based.
 3. Install the requirements: `pip install -r requirements.txt`
 
 4. Pass the following parameters to the `apidata_fromcsv.py` script
-   * **path**: path to the CSV file
+   * **dataPath**: path to the event data csv file
+   * **metadataPath**: path to the metadata info csv file (can be 'none')
    * **timeUnit**: temporal units for retrieved environmental data set from: hour, day, month or year
    * **spAgg**: spatio-temporal aggregation method for the environmental data sets from: AVG, SUM, MIN or MAX
-   * **dataFormat**: returning data format as 'CSV' or 'RDF'
+   * **dataFormat**: returning data format as CSV or RDF
    * **username**: username credentials for https://serdif-example.adaptcentre.ie/
    * **password**: password credentials for https://serdif-example.adaptcentre.ie/
 
-Check required parameters: `python apidata_fromcsv.py -h`
+    
+    Check required parameters: `python apidata_fromcsv.py -h`
 
-Example in-line command: `python apidata_fromcsv.py event_data.csv day AVG CSV username password`
+####Example in-line commands: 
+* Main interest is to retrieve data as a CSV for analysis (`metadataPath: none, dataFormat: CSV`)
+
+`python apidata_fromcsv.py event_data.csv none day AVG CSV username password`
+* Retrieving open-ready data for publication (`metadataPath: event_metadata.csv, dataFormat: RDF`) requires 
+  an event metadata file such as [event_metadata.csv](https://github.com/navarral/serdif-api/blob/main/event_metadata.csv).
+* Open-ready data will be retrieved as a zip file that contains:
+  * (i) data as csv: environmental data associated to particular events as a datatable
+  * (ii) data as rdf: environmental data associated to particular events as a graph 
+  * (iii) metadata for publication as rdf: metadata record with generalized information about the data
+  that do not contain personal data as a graph; therefore, publishable.
+  * (iv) metadata for open-ready as rdf: metadata records with detailed information about the data,
+  such as individual dates, regions, data sets used and data lineage; which could lead to data privacy issues
+  if published without approval from the Data Protection Officer (DPO) and data controller.
+
+`python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
