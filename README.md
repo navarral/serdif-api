@@ -68,32 +68,31 @@ with the same column headers that are case-sensitive:
 The following instructions are Linux based and the venv folder of the repo 
 provides the required Python version and packages required.
 
-### Building
+### Setup
 
 #### 1. Download serdif-api github repo
 
 [Download zip](https://github.com/navarral/serdif-api/archive/refs/heads/main.zip)
    or Clone the repo with `git clone https://github.com/navarral/serdif-api.git`
 
-#### 2. Open a terminal in the project folder
+#### 2. Extract the content of the zip file (unzip)
 
-Right click and select: Open in Terminal (Linux), Open command window here (Windows) and Service -> New Terminal at Folder (Mac)
+#### 3. Go to the `dist` folder and open a terminal in the project folder
 
-#### 3. Activate the virtual environment
+* Linux: right click and select 'Open in Terminal'
+* Windows: type 'cmd' in the folder address bar 
+* Mac: https://www.maketecheasier.com/launch-terminal-current-folder-mac/
 
-`source venv/bin/activate`
+#### 4. Check required parameters for the serdif-api
+Type in the terminal window:
 
-#### 4. Install the requirements
-
-`pip install -r requirements.txt`
-
-#### 5. Check required parameters for the serdif-api
-
-`python apidata_fromcsv.py -h`
+* Linux: `./apidata_fromcsv -h`
+* Windows: `apidata_fromcsv -h`
+* Mac: `apidata_fromcsv -h`
 
 ### Querying
 
-#### 6. Pass the following parameters to the `apidata_fromcsv.py` script:
+#### 7. Pass the following parameters to `apidata_fromcsv`:
 
 * **dataPath**: path to the event data csv file
 * **metadataPath**: path to the metadata info csv file (can be 'none')
@@ -103,18 +102,19 @@ Right click and select: Open in Terminal (Linux), Open command window here (Wind
 * **username**: username credentials for https://serdif-example.adaptcentre.ie/
 * **password**: password credentials for https://serdif-example.adaptcentre.ie/
 
-#### 7. Example in-line commands: 
+#### 8. Example in-line commands: 
 
 * Main interest is to retrieve data as a CSV for analysis (`metadataPath: none, dataFormat: CSV`)
+  * Linux: `./apidata_fromcsv event_data.csv none day AVG CSV username password`
+  * Windows: `apidata_fromcsv event_data.csv none day AVG CSV username password`
+  * Mac: `apidata_fromcsv event_data.csv none day AVG CSV username password`
 
-
-    `python apidata_fromcsv.py event_data.csv none day AVG CSV username password`
 
 * Retrieving open-ready data for publication (`metadataPath: event_metadata.csv, dataFormat: RDF`) requires 
   an event metadata file such as [event_metadata.csv](https://github.com/navarral/serdif-api/blob/main/event_metadata.csv).
-
-  
-    `python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
+  * Linux: `./apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
+  * Windows: `apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
+  * Mac: `apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
 
 
 * Open-ready data will be retrieved as a zip file ([example](https://github.com/navarral/serdif-api/blob/main/ee-openready-20211012T120000-QT-20211209T184108.zip)) that contains:
@@ -125,7 +125,4 @@ Right click and select: Open in Terminal (Linux), Open command window here (Wind
   * (iv) metadata for open-ready as rdf: metadata records with detailed information about the data,
   such as individual dates, regions, data sets used and data lineage; which could lead to data privacy issues
   if published without approval from the Data Protection Officer (DPO) and data controller.
-
-
-
 
