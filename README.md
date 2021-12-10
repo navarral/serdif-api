@@ -80,15 +80,13 @@ provides the required Python version and packages required.
 #### 3. Go to the `dist` folder and open a terminal in the `dist` folder
 
 * Linux: right click and select 'Open in Terminal'
-* Windows: type 'cmd' in the folder address bar 
-* Mac: https://www.maketecheasier.com/launch-terminal-current-folder-mac/
+* Windows: type 'cmd' in the folder address bar
 
 #### 4. Check required parameters for the serdif-api
 Type in the terminal window:
 
 * Linux: `./apidata_fromcsv -h`
-* Windows: `apidata_fromcsv -h`
-* Mac: `apidata_fromcsv -h`
+* Windows: `apidata_fromcsv.exe -h`
 
 ### Querying
 
@@ -106,15 +104,13 @@ Type in the terminal window:
 
 * Main interest is to retrieve data as a CSV for analysis (`metadataPath: none, dataFormat: CSV`)
   * Linux: `./apidata_fromcsv event_data.csv none day AVG CSV username password`
-  * Windows: `apidata_fromcsv event_data.csv none day AVG CSV username password`
-  * Mac: `apidata_fromcsv event_data.csv none day AVG CSV username password`
+  * Windows: `apidata_fromcsv.exe event_data.csv none day AVG CSV username password`
 
 
 * Retrieving open-ready data for publication (`metadataPath: event_metadata.csv, dataFormat: RDF`) requires 
   an event metadata file such as [event_metadata.csv](https://github.com/navarral/serdif-api/blob/main/event_metadata.csv).
   * Linux: `./apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
-  * Windows: `apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
-  * Mac: `apidata_fromcsv event_data.csv event_metadata.csv day AVG RDF username password`
+  * Windows: `apidata_fromcsv.exe event_data.csv event_metadata.csv day AVG RDF username password`
 
 
 * Open-ready data will be retrieved as a zip file ([example](https://github.com/navarral/serdif-api/blob/main/ee-openready-20211012T120000-QT-20211209T184108.zip)) that contains:
