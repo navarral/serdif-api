@@ -69,28 +69,28 @@ provides the required Python version and packages required.
 
 ### Building
 
-1. Download serdif-api github repo
+#### 1. Download serdif-api github repo
 
 [Download zip](https://github.com/navarral/serdif-api/archive/refs/heads/main.zip)
    or Clone the repo with `git clone https://github.com/navarral/serdif-api.git`
 
-2. Open a terminal in the project folder
+#### 2. Open a terminal in the project folder
 
 Right click and select: Open in Terminal (Linux), Open command window here (Windows) and Service -> New Terminal at Folder (Mac)
 
-3. Activate the virtual environment
+#### 3. Activate the virtual environment
 
 `source venv/bin/activate`
 
-4. Install the requirements
+#### 4. Install the requirements
 
 `pip install -r requirements.txt`
 
-5. Check required parameters for the serdif-api
+#### 5. Check required parameters for the serdif-api
 
 `python apidata_fromcsv.py -h`
 
-6. Pass the following parameters to the `apidata_fromcsv.py` script:
+#### 6. Pass the following parameters to the `apidata_fromcsv.py` script:
 
 * **dataPath**: path to the event data csv file
 * **metadataPath**: path to the metadata info csv file (can be 'none')
@@ -100,7 +100,7 @@ Right click and select: Open in Terminal (Linux), Open command window here (Wind
 * **username**: username credentials for https://serdif-example.adaptcentre.ie/
 * **password**: password credentials for https://serdif-example.adaptcentre.ie/
 
-7. Example in-line commands: 
+#### 7. Example in-line commands: 
 
 * Main interest is to retrieve data as a CSV for analysis (`metadataPath: none, dataFormat: CSV`)
 
