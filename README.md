@@ -65,8 +65,8 @@ with the same column headers that are case-sensitive:
 
 
 ## How to use serdif-api
-The following instructions are Linux based and the venv folder of the repo 
-provides the required Python version and packages required.
+The following instructions are Linux and Windows based using the respective distributions, which 
+contain the necessary build to run the serdif-api.
 
 ### Setup
 
