@@ -91,6 +91,8 @@ Right click and select: Open in Terminal (Linux), Open command window here (Wind
 
 `python apidata_fromcsv.py -h`
 
+### Querying
+
 #### 6. Pass the following parameters to the `apidata_fromcsv.py` script:
 
 * **dataPath**: path to the event data csv file
