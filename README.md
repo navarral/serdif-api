@@ -1,4 +1,4 @@
-# serdif-api
+# serdif-api [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5772091.svg)](https://doi.org/10.5281/zenodo.5772091)
 
 Semantic Environmental and Rare disease Data Integration Framework (SERDIF)
 
@@ -22,6 +22,7 @@ Albert Navarro-Gallinad. (2021). Weather and Air Quality data for Ireland as RDF
 * Air pollution: [European Environmental Agency (eea)](https://discomap.eea.europa.eu/map/fme/AirQualityExport.htm)
 * Data Period: 2000-2021
 * Country: Republic of Ireland (IE)
+* Version: 20211012T120000
 
 
 ## Data Lineage
