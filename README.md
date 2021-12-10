@@ -60,13 +60,18 @@ Example CSV input
 ### 3. Run the serdif apidata_fromcsv within the virtual environment
 The following instructions are Linux based.
 
-1. Open a terminal in the project folder
+#### 3.1. Open a terminal in the project folder
 
-2. Activate the virtual environment: `source venv/bin/activate`
+#### 3.2. Activate the virtual environment
+`source venv/bin/activate`
 
-3. Install the requirements: `pip install -r requirements.txt`
+#### 3.3. Install the requirements 
+`pip install -r requirements.txt`
 
-4. Pass the following parameters to the `apidata_fromcsv.py` script
+#### 3.4. Check required parameters 
+`python apidata_fromcsv.py -h`
+
+#### 3.5. Pass the following parameters to the `apidata_fromcsv.py` script
    * **dataPath**: path to the event data csv file
    * **metadataPath**: path to the metadata info csv file (can be 'none')
    * **timeUnit**: temporal units for retrieved environmental data set from: hour, day, month or year
@@ -76,12 +81,15 @@ The following instructions are Linux based.
    * **password**: password credentials for https://serdif-example.adaptcentre.ie/
 
     
-    Check required parameters: `python apidata_fromcsv.py -h`
+    
 
-####Example in-line commands: 
+#### 3.6. Example in-line commands: 
 * Main interest is to retrieve data as a CSV for analysis (`metadataPath: none, dataFormat: CSV`)
 
-`python apidata_fromcsv.py event_data.csv none day AVG CSV username password`
+
+    `python apidata_fromcsv.py event_data.csv none day AVG CSV username password`
+
+
 * Retrieving open-ready data for publication (`metadataPath: event_metadata.csv, dataFormat: RDF`) requires 
   an event metadata file such as [event_metadata.csv](https://github.com/navarral/serdif-api/blob/main/event_metadata.csv).
 * Open-ready data will be retrieved as a zip file that contains:
@@ -93,4 +101,5 @@ The following instructions are Linux based.
   such as individual dates, regions, data sets used and data lineage; which could lead to data privacy issues
   if published without approval from the Data Protection Officer (DPO) and data controller.
 
-`python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
+
+    `python apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
