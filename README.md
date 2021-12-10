@@ -77,7 +77,7 @@ provides the required Python version and packages required.
 
 #### 2. Extract the content of the zip file (unzip)
 
-#### 3. Go to the `dist` folder and open a terminal in the project folder
+#### 3. Go to the `dist` folder and open a terminal in the `dist` folder
 
 * Linux: right click and select 'Open in Terminal'
 * Windows: type 'cmd' in the folder address bar 
