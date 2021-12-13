@@ -1,4 +1,4 @@
-# serdif-api [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5772091.svg)](https://doi.org/10.5281/zenodo.5772091)
+# serdif-api [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5772090.svg)](https://doi.org/10.5281/zenodo.5772091)
 
 Semantic Environmental and Rare disease Data Integration Framework (SERDIF)
 
