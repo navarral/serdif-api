@@ -66,7 +66,10 @@ with the same column headers that are case-sensitive:
 
 ## How to use serdif-api
 The following instructions are Linux and Windows based using the respective distributions, which 
-contain the necessary build to run the serdif-api.
+contain the necessary build to run the serdif-api. Therefore, having installed Python on your
+computer with the required packages is not required.
+
+However, if you are a Mac OS user please refer to the *[Building](#Building)* Section a the end of this document
 
 ### Setup
 
@@ -122,3 +125,23 @@ Type in the terminal window:
   such as individual dates, regions, data sets used and data lineage; which could lead to data privacy issues
   if published without approval from the Data Protection Officer (DPO) and data controller.
 
+### Building
+Python version 3.6 or newer is required to be installed in your system to continue with the steps below.
+
+* Install venv or virtual environment in Python
+
+`python3 -m pip install --user virtualenv`
+
+* Activate the virtual environment from the `venv` folder available in the repo
+
+`source venv/bin/activate`
+
+* Install the Python packages from the `requirements.txt` file
+
+`pip install -r requirements.txt`
+
+* Run the `apidata_fromcsv.py` passing the parameter inputs in the command
+
+`python3 apidata_fromcsv.py event_data.csv none day AVG CSV username password`
+
+`python3 apidata_fromcsv.py event_data.csv event_metadata.csv day AVG RDF username password`
