@@ -128,7 +128,7 @@ def evEnvoDataAsk(referer, repo, evEnvoDict, username, password):
                     a qb:Observation ;
                     qb:dataSet ?envoDataSet ;
                     sdmx-dimension:timePeriod ?obsTime .        
-                FILTER(?obsTime > "''' + evEnvoDict[ev]['dateStart'] + '''"^^xsd:dateTime && ?obsTime <= "''' + \
+                FILTER(?obsTime > "''' + evEnvoDict[ev]['dateStart'] + '''"^^xsd:dateTime && ?obsTime < "''' + \
                      evEnvoDict[ev]['dateLag'] + '''"^^xsd:dateTime)
             }
         }
@@ -194,12 +194,13 @@ def evEnvoDataSet(referer, repo, evEnvoDict, timeUnit, spAgg, username, password
                             a qb:Observation ;
                             qb:dataSet ?envoDataSet ;
                             sdmx-dimension:timePeriod ?obsTime .        
-                        FILTER(?obsTime > "''' + evEnvoDict[ev]['dateStart'] + '''"^^xsd:dateTime && ?obsTime <= "''' + \
+                        FILTER(?obsTime > "''' + evEnvoDict[ev]['dateStart'] + '''"^^xsd:dateTime && ?obsTime < "''' + \
                      evEnvoDict[ev]['dateLag'] + '''"^^xsd:dateTime)
                     }
                 }
                 ?obsData ?envProp ?envVar .
-                FILTER(datatype(?envVar) = xsd:float)    
+                FILTER(datatype(?envVar) = xsd:float)  
+                FILTER(?envProp != <http://purl.org/linked-data/sdmx/2009/measure#obsValue>)  
                 # String manipulation to aggregate observations per time unit
                 BIND(YEAR(?obsTime) AS ?yearT)
                 BIND(MONTH(?obsTime) AS ?monthT)
