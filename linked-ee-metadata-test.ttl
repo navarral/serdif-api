@@ -1,0 +1,733 @@
+@prefix rdf: 			<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 			<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: 			<http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: 			<http://www.w3.org/2002/07/owl#> .
+
+@prefix dct: 			<http://purl.org/dc/terms/> .
+@prefix dcat: 			<http://www.w3.org/ns/dcat#> .
+@prefix prov:			<http://www.w3.org/ns/prov#> .
+@prefix prvt:			<http://purl.org/net/provenance/ns#> .
+@prefix foaf:			<http://xmlns.com/foaf/0.1/> .
+@prefix sp:				<http://spinrdf.org/spin#> .
+
+@prefix qb:  			<http://purl.org/linked-data/cube#> .
+
+@prefix sdmx-concept:  	<http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-metadata:  <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx-code:      <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-subject:   <http://purl.org/linked-data/sdmx/2009/subject#> .
+
+@prefix geo: 			<http://www.opengis.net/ont/geosparql#> .
+@prefix qudt: 			<http://qudt.org/schema/qudt#> .
+@prefix unit: 			<http://qudt.org/vocab/unit/> .
+@prefix time:			<http://www.w3.org/2006/time#> .
+@prefix locn: 			<http://www.w3.org/ns/locn#>.
+
+@prefix serdif: 		<https://serdif.adaptcentre.ie/kg/2022/>.
+@prefix serdif-dataset: <https://serdif.adaptcentre.ie/kg/2022/dataset#> .
+@prefix serdif-measure: <https://serdif.adaptcentre.ie/kg/2022/measure#> .
+@prefix serdif-dimension: <https://serdif.adaptcentre.ie/kg/2022/dimension#> .
+@prefix serdif-slice: <https://serdif.adaptcentre.ie/kg/2022/slice#> .
+
+@prefix dpv:			<http://www.w3.org/ns/dpv#> .
+@prefix dpv-gdpr: 		<http://www.w3.org/ns/dpv-gdpr#> .
+@prefix obo:			<http://purl.obolibrary.org/obo/> .
+@prefix odrl: 			<http://www.w3.org/ns/odrl/2/> .
+
+
+# -- Data Set ----------------------------------------------------------
+
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891
+	a 							qb:DataSet, geo:Feature, prov:Entity, dcat:Dataset ;
+    dct:title 					"Dataset with air pollution and weather data linked with multiple events related to Rare Disease A"@en ;
+    rdfs:label      			"Dataset with air pollution and weather data linked with multiple events related to Rare Disease A"@en ;
+    rdfs:comment    		"The dataset is the result of linking air pollution and weather datasets to particular events related to Rare Disease A through space and time. The dataset contains aggregated observations within an area relevant to each particular event and for a time window before the event in DAYS. The data is aggregated using the AVG function."@en ;
+    dct:description 			"The dataset is the result of linking air pollution and weather datasets to particular events related to Rare Disease A through space and time. The dataset contains aggregated observations within an area relevant to each particular event and for a time window before the event in DAYS. The data is aggregated using the AVG function."@en ;
+    # After depositing this data set in a repository uncomment the line below and substitute the DOI url link for the appropriate value
+    #dct:identifier 			<https://doi.org/10.5281/zenodo.5544257> ;
+    dct:hasVersion				"20220524" ;
+    dct:issued      			"2022-06-21T15:51:06.126891Z"^^xsd:dateTime ;
+    dct:publisher   			<https://www.adaptcentre.ie/>, <https://www.tcd.ie/> ;
+	dct:license 				<https://creativecommons.org/licenses/by-sa/4.0/> ;
+
+	# -- Themes describing the dataset ---------------------------------
+    dcat:theme
+        sdmx-subject:3.2 ,      					      # Regional and small area statistics
+        sdmx-subject:3.1 ,      					  	  # Environment
+        sdmx-subject:1.4 ,      					  	  # Health
+        <https://www.wikidata.org/entity/Q932068>		, # Environmental health
+        <https://www.wikidata.org/entity/Q1656682>		, # Event
+        <https://www.wikidata.org/entity/Q186588>		, # Time series
+        <https://www.wikidata.org/entity/Q131123>		, # Air pollution
+        <https://www.wikidata.org/entity/Q11663>		; # Weather
+
+    # -- External data sets used to construct this data set ------------
+    dct:hasPart 				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651> ;
+
+	# -- Spatial descriptors -------------------------------------------
+	locn:geometry 			serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-geo ;
+
+	# -- Temporal descriptors ------------------------------------------
+	dcat:temporalResolution 	"P1D"^^xsd:duration ;
+	dct:temporal 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-temporal ;
+
+	# -- RDF Data cube structure ---------------------------------------
+	qb:structure 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dsd ;
+
+	# -- Activity that constructed the data set ------------------------
+    prov:wasGeneratedBy 		serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-linkage ;
+    prov:wasGeneratedBy  		serdif:event-A-journey ;
+	prov:wasGeneratedBy  		serdif:event-B-journey ;
+	    
+    # -- Data protection aspects ---------------------------------------
+    dpv:hasDataController 				<https://www.tcd.ie/> ;
+    dpv:hasDataSubject 						serdif:DataSubject ;
+    dpv:hasLegalBasis							serdif:LegalBasis ;
+	dpv:hasPersonalDataCategory	serdif:PersonalDataCategory ;
+	dpv:hasProcessing							serdif:AssociateEnvoToHealthEvent ;
+	dpv:hasPurpose								serdif:ProcessingPurpose ;
+	dpv:hasRecipient							<https://orcid.org/0000-0002-2336-753X> ;
+	dpv:hasRight									serdif:Right ;
+	dpv:hasRisk										serdif:IdentificationRisk ;
+
+	# -- Dataset use ---------------------------------------------------
+	rdfs:about 					serdif:DataUse ;
+.
+
+# -- Distribution ------------------------------------------------------
+
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dist
+	a 							dcat:Distribution ;
+	dct:license 				<https://creativecommons.org/licenses/by-sa/4.0/> ;
+	dct:title					"Environmental data associated to particular health events of Rare Disease A dataset"@en ;
+	rdfs:comment    			"The dataset is an example result of associating air pollution and weather data subsets to particular health events of Rare Disease A. The subsets are obtained by aggregating land-based stations observation data relative to each event within county  at a DAYS time unit by using the AVG function. The observation data is related to a time-window prior to each event in DAYS."@en ;
+    dct:description 			"The dataset is an example result of associating air pollution and weather data subsets to particular health events of Rare Disease A. The subsets are obtained by aggregating land-based stations observation data relative to each event within county  at a DAYS time unit by using the AVG function. The observation data is related to a time-window prior to each event in DAYS."@en ;
+	# After depositing this data set in a repository uncomment the line below and substitute the download link for the appropriate value
+	#dcat:downloadURL 			<https://zenodo.org/record/5544258/files/Envo-Event_data_example.ttl?download=1> ;
+	dcat:mediaType 				<https://www.iana.org/assignments/media-types/text/turtle> ;
+	dcat:byteSize 				"45664"^^xsd:float ;
+	dcat:temporalResolution 	"P1D"^^xsd:duration ;
+.
+
+# -- Agents ------------------------------------------------------------
+<https://orcid.org/0000-0002-2336-753X> a prov:Person, prov:Agent, dpv:DataProcessor .
+
+<https://www.adaptcentre.ie/> a dct:Agent .
+<https://www.tcd.ie/> a dct:Agent .
+
+
+# -- Period of time included in the data set ---------------------------
+
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-temporal
+	a 						dct:PeriodOfTime ;
+	rdfs:comment    		"Time interval defined by the maximum and minimum date available taking into account all events"@en ;
+	dcat:startDate 			"2011-01-01T00:00:00Z"^^xsd:dateTime ;
+	dcat:endDate   			"2021-01-01T00:00:00Z"^^xsd:dateTime ;
+.
+
+# -- Region geometries -------------------------------------------------
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-geo
+	a 						geo:Geometry ;
+	geo:asWKT 	"POLYGON ((8.943620550000077 47.375838750000042, 8.935932050000076 47.260639250000082, 8.795788050000027 47.239071250000023, 8.807778550000023 47.22055775000004, 8.714263050000028 47.203163250000046, 8.692463050000043 47.163631250000066, 8.410697050000039 47.248038750000035, 8.45503405000008 47.33367125, 8.357815550000083 47.502464750000058, 8.426542050000023 47.56759625, 8.563081550000078 47.59952125, 8.595710050000093 47.605728250000027, 8.606250050000085 47.668873250000019, 8.663431050000071 47.685905750000018, 8.67049705000008 47.68493675000002, 8.826418050000058 47.646747250000033, 8.739464050000038 47.608116250000023, 8.89870755000004 47.524085750000069, 8.943620550000077 47.375838750000042))"^^geo:wktLiteral, "POLYGON ((8.807778550000023 47.22055775000004, 8.795788050000027 47.239071250000023, 8.935932050000076 47.260639250000082, 8.943620550000077 47.375838750000042, 9.06294155000009 47.446350250000052, 9.012053550000076 47.489475250000083, 9.43593805000009 47.506927250000018, 9.449201550000055 47.500915750000075, 9.476066550000013 47.489734750000054, 9.56133655000005 47.500126250000022, 9.674037050000067 47.38879725000001, 9.529959550000086 47.270942750000046, 9.476036050000062 47.051796250000024, 9.54588705 46.976703250000043, 9.452525050000077 46.874618750000053, 9.248874550000068 46.916271250000023, 9.236398050000048 47.023986750000063, 9.138134050000048 47.039188750000051, 9.188602550000041 47.116801750000036, 9.098919050000063 47.13277075000002, 9.003814550000072 47.172462750000051, 8.941090550000013 47.21842175, 8.809363550000086 47.219386750000069, 8.807778550000023 47.22055775000004))"^^geo:wktLiteral ;
+.
+
+# -- Data provenance and lineage ---------------------------------------
+
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-linkage
+	# -- Type of activity ----------------------------------------------
+	a 						prov:Activity, prvt:DataCreation ;
+	# -- External data sets used in the activity -----------------------
+	prov:used  				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651> ;
+	# -- ORCID for the agent that performed the activity ---------------
+	prov:wasAssociatedWith 	<https://orcid.org/0000-0002-2336-753X> ;
+	# -- Activity explanation for humans -------------------------------
+	rdfs:comment 			"The activity describes a SPARQL query to associate environmental data to particular health events by reasoning over location and time. The GeoSPARQL function geof:sfWithin is used to select environmental data within an area relevant to each event, and xsd:duration to filter a specific time window prior to the event."@en ;
+	# -- Query to construct the data set -------------------------------
+	prvt:usedGuideline [ 	a prvt:CreationGuideline, prvt:SPARQLquery, sp:Construct ;
+							sp:text """
+							Text
+							"""
+						] ;
+.
+
+# -- Data protection terms ---------------------------------------------
+
+serdif:DataSubject
+	rdfs:subcClassOf 		dpv:DataSubject ;
+	rdfs:label 				"People with rare disease A" ;
+	rdfs:comment			"People with rare disease A"@en ;
+    rdfs:seeAlso 			<http://example.org/data-subject> ;
+.
+
+serdif:LegalBasis
+	a						dpv:Consent ;
+	rdfs:label 				"People that have signed a participant consent form" ;
+	rdfs:comment			"The individuals eligible to participate in research project ABC signed a participant consent form"@en ;
+    rdfs:seeAlso 			<http://example.org/legal-basis> ;
+.
+
+serdif:PersonalDataCategory
+	rdfs:subClassOf 		dpv:MedicalHealth ;
+	rdfs:label 				"Personal Health Information"@en ;
+	rdfs:comment		"Consulting personal health information from a disease patient registry: (1) an individual patient’s electoral district, county or/and hospital location and (2) individual patient dates for diagnosis, flare events and disease activity (e.g. yyyy-mm-dd)"@en ;
+    rdfs:seeAlso 			<http://example.org/personal-data-category> ;
+.
+
+serdif:AssociateEnvoToHealthEvent
+	a				 		dpv:Combine, dpv:Align, dpv:Consult ;
+	dpv:hasDataSource 		<https://www.met.ie//climate/available-data/historical-data>, <https://discomap.eea.europa.eu/map/fme/AirQualityExport.htm> ;
+	rdfs:comment			"Combining health events with environmental data to understand better the extrinsic factors that influence health outcomes. The data sources are consulted and combined using SPARQL queries by reasoning over location and time. Environmental observations are aggregated within the region of the health event and filtered for a specific period prior to the health event. The resulting dataset contains environmental observations associated to a set of health events related to individuals with a rare disease"@en ;
+.
+
+serdif:ProcessingPurpose
+	a				 		dpv:AcademicResearch, dpv:Share ;
+	rdfs:label 				"Academic Research"@en ;
+	rdfs:comment			"Combining clinical with environmental data to understand better the extrinsic factors that influence health outcomes in rare disease research. The data sources are consulted and combined using federated SPARQL queries by reasoning over location and time. Environmental observations are aggregated within the region of the health event and filtered for a specific period prior to the health event. The resulting dataset contains environmental observations associated to a set of health events related to individuals with a rare disease"@en ;
+	rdfs:seeAlso 			<http://example.org/processing-purpose> ;
+.
+
+serdif:Right
+	a						dpv-gdpr:A13, dpv-gdpr:A14, dpv-gdpr:A15, dpv-gdpr:A16, dpv-gdpr:A17, dpv-gdpr:A18, dpv-gdpr:A19, dpv-gdpr:A20, dpv-gdpr:A21, dpv-gdpr:A22, dpv-gdpr:A7-3, dpv-gdpr:A77 ;
+	rdfs:comment			"GDPR provides several rights to the data subject, whose applicability depends on the context and nature of processing taking place."@en ;
+	rdfs:seeAlso 			<http://example.org/right> ;
+.
+
+serdif:IdentificationRisk
+	rdfs:subClassOf			dpv:Risk ;
+	rdfs:comment			"The dataset is considered pseudonymised since effective anonymisation was not possible without losing value of the data for research. Identification risks: (1) singling out of individual subjects, (2) linking of records or matching of data between data sets, and (3) inference of any information about individuals from the data set. (1) Individual patient dates are used to associate environmental data; which in a hospital context the hospital, the individuals could be identified due to the rare disease condition of the patients. (2) Individual patient dates could be linked to hospital attendance registries in the area, public registries, social media data and other sources. (3) The rare condition of the patients, the pseudonymised category of the data together with the location and time expressed in the environmental data could potentially lead to inferring a link even though the information is not expressly linked."@en  ;
+.
+
+# -- Dataset use -------------------------------------------------------
+
+serdif:DataUse
+	a 							obo:DUO_0000007, obo:DUO_0000026 ;
+	rdfs:comment	"The dataset can only be used for researching rare disease A by researchers within the ABC project"@en ;
+.
+
+# -- Data structure definition -----------------------------------------
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dsd
+        a             qb:DataStructureDefinition ;
+        rdfs:comment  "RDF Data Cube data structure definition for event-environmental linked observations (multi-measure approach) provided with variable normals and standard deviation values providing historical context for each particular event."@en ;
+		qb:component
+
+        # The dimensions
+			[ 	a	qb:ComponentSpecification ;
+				qb:dimension serdif-dimension:event ;
+				qb:order "1"^^xsd:int;
+				qb:componentAttachment qb:Slice  ] ,
+
+			[ 	a qb:ComponentSpecification ;
+				qb:dimension serdif-dimension:measureType ;
+				qb:order "2"^^xsd:int;
+				qb:componentAttachment qb:Slice ] ,
+
+			[ 	a qb:ComponentSpecification ;
+				qb:dimension sdmx-dimension:timePeriod ;
+				qb:order "3"^^xsd:int;
+				qb:componentAttachment qb:Slice ] ;
+
+		# The measures
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasC6H5CH3Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasC6H6Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasCOValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasMaximumTemperatureValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasMeanTemperatureValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasMinimumTemperatureValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasNOValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasNO2Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasNOXasNO2Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasO3Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasPM10Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasPM2.5Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasPrecipitationAmountValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasRelativeHumidityValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasSO2Value ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasSeaLevelPressureValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasSolarRadiationValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasTHCNMValue ] ;
+        
+        qb:component  [ a	qb:ComponentSpecification ;		qb:measure  serdif:hasWindSpeedValue ] ;
+        
+
+        # slices
+		qb:sliceKey serdif:sliceByTime ;
+ .
+
+serdif:sliceByTime a qb:SliceKey;
+	rdfs:label "slice by time"@en;
+	rdfs:comment "Slice by fixing event and observation types and grouping measurements by observation time"@en;
+	qb:componentProperty serdif-dimension:measureType, serdif-dimension:event, sdmx-dimension:timePeriod ;
+.
+# -- Dimensions and measures  ------------------------------------------
+
+# event
+serdif-dimension:event
+	a 					qb:DimensionProperty, rdf:Property ;
+    rdfs:range 			rdfs:Resource;
+    qb:concept 			sdmx-concept:statUnit ;
+    rdfs:label 				"Reference Event"@en ;
+    rdfs:comment 		"The geolocated point in time for which information is sought and for which statistics are ultimately compiled."@en ;
+.
+
+# measure type
+serdif-dimension:measureType
+	a 					qb:DimensionProperty, rdf:Property ;
+    rdfs:range 			rdfs:Resource;
+    qb:concept 			sdmx-concept:comparDomains ;
+    rdfs:label 				"Measure Type"@en ;
+    rdfs:comment 		"The statistical measure type represented by the value."@en ;
+    rdfs:isDefinedBy 	<https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf> ;
+.
+
+# area
+serdif-dimension:area
+	a 					qb:DimensionProperty, rdf:Property ;
+    rdfs:range 			rdfs:Resource;
+    qb:concept 			sdmx-concept:refArea ;
+    rdfs:label 				"Event Area"@en ;
+    rdfs:comment 		"The geographic area to which the measured statistical phenomenon relates."@en ;
+    rdfs:isDefinedBy 	<https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf> ;
+.
+
+# time period
+sdmx-dimension:timePeriod
+	a 					qb:DimensionProperty, rdf:Property ;
+    rdfs:range 			rdfs:Resource;
+    qb:concept 			sdmx-concept:timePeriod ;
+    rdfs:label 				"Time Period"@en ;
+    rdfs:comment 		"The period of time or point in time to which the measured observation refers."@en ;
+    rdfs:isDefinedBy 	<https://sdmx.org/wp-content/uploads/01_sdmx_cog_annex_1_cdc_2009.pdf> ;
+.
+
+
+# Toluene (air) - ug/m3
+serdif:hasC6H5CH3Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"C6H5CH3Value"@en ;
+	rdfs:comment   		"Toluene (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/21> ;
+.
+
+# Benzene (air) - ug/m3
+serdif:hasC6H6Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"C6H6Value"@en ;
+	rdfs:comment   		"Benzene (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/20> ;
+.
+
+# Carbon monoxide (air) - mg/m3
+serdif:hasCOValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"COValue"@en ;
+	rdfs:comment   		"Carbon monoxide (air) - mg/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/mg.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/10> ;
+.
+
+# Daily maximum air temperature measured near the surface, usually at height of 2 meters.
+serdif:hasMaximumTemperatureValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"MaximumTemperatureValue"@en ;
+	rdfs:comment   		"Daily maximum air temperature measured near the surface, usually at height of 2 meters." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:DEG_C> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/A05/current/EV_AIRTEMP/> ;
+.
+
+# Daily mean air temperature measured near the surface, usually at height of 2 meters.
+serdif:hasMeanTemperatureValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"MeanTemperatureValue"@en ;
+	rdfs:comment   		"Daily mean air temperature measured near the surface, usually at height of 2 meters." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:DEG_C> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/A05/current/EV_AIRTEMP/> ;
+.
+
+# Daily minimum air temperature measured near the surface, usually at height of 2 meters.
+serdif:hasMinimumTemperatureValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"MinimumTemperatureValue"@en ;
+	rdfs:comment   		"Daily minimum air temperature measured near the surface, usually at height of 2 meters." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:DEG_C> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/A05/current/EV_AIRTEMP/> ;
+.
+
+# Nitrogen monoxide (air) - ug/m3
+serdif:hasNOValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"NOValue"@en ;
+	rdfs:comment   		"Nitrogen monoxide (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/38> ;
+.
+
+# Nitrogen dioxide (air) - ug/m3
+serdif:hasNO2Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"NO2Value"@en ;
+	rdfs:comment   		"Nitrogen dioxide (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/8> ;
+.
+
+# Nitrogen oxides (air) - ug/m3
+serdif:hasNOXasNO2Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"NOXasNO2Value"@en ;
+	rdfs:comment   		"Nitrogen oxides (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/9> ;
+.
+
+# Ozone (air) - ug/m3
+serdif:hasO3Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"O3Value"@en ;
+	rdfs:comment   		"Ozone (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/7> ;
+.
+
+# Particulate matter < 10 µm (aerosol) - ug/m3
+serdif:hasPM10Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"PM10Value"@en ;
+	rdfs:comment   		"Particulate matter < 10 µm (aerosol) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/5> ;
+.
+
+# Particulate matter < 2.5 µm (aerosol) - ug/m3
+serdif:hasPM2.5Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"PM2.5Value"@en ;
+	rdfs:comment   		"Particulate matter < 2.5 µm (aerosol) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001> ;
+.
+
+# Total daily amount of rain, snow and hail measured as the height of the equivalent liquid water in a square meter The data sources for the precipitation are rain gauge data which do not have a uniform way of defining the 24-hour period over which precipitation measurements are made. Therefore, there is no uniform time period (for instance, 06 UTC previous day to 06 UTC today) which could be attached to the daily precipitation.
+serdif:hasPrecipitationAmountValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"PrecipitationAmountValue"@en ;
+	rdfs:comment   		"Total daily amount of rain, snow and hail measured as the height of the equivalent liquid water in a square meter The data sources for the precipitation are rain gauge data which do not have a uniform way of defining the 24-hour period over which precipitation measurements are made. Therefore, there is no uniform time period (for instance, 06 UTC previous day to 06 UTC today) which could be attached to the daily precipitation." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:MilliM> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/A05/current/EV_RAIN/> ;
+.
+
+# Daily mean relative humidity measured near the surface usually at a height of 2 meters. Relative humidity values relate to actual humidity and saturation humidity. Values are in the interval [0,100]. 0% means that the air in the grid cell is totally dry whereas 100% indicates that the air in the cell is saturated with water vapour.
+serdif:hasRelativeHumidityValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"RelativeHumidityValue"@en ;
+	rdfs:comment   		"Daily mean relative humidity measured near the surface usually at a height of 2 meters. Relative humidity values relate to actual humidity and saturation humidity. Values are in the interval [0,100]. 0% means that the air in the grid cell is totally dry whereas 100% indicates that the air in the cell is saturated with water vapour." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:PERCENT> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/P01/current/CRELZZ01/> ;
+.
+
+# Sulphur dioxide (air) - ug/m3
+serdif:hasSO2Value
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"SO2Value"@en ;
+	rdfs:comment   		"Sulphur dioxide (air) - ug/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/1> ;
+.
+
+# Daily mean air pressure at sea level. In regions where the Earth's surface is above sea level the surface pressure is used to compute the air pressure that would exist at sea level directly below given a constant air temperature from the surface to the sea level point.
+serdif:hasSeaLevelPressureValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"SeaLevelPressureValue"@en ;
+	rdfs:comment   		"Daily mean air pressure at sea level. In regions where the Earth's surface is above sea level the surface pressure is used to compute the air pressure that would exist at sea level directly below given a constant air temperature from the surface to the sea level point." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:HectoPA> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/P01/current/CDEWZZ01/> ;
+.
+
+# The flux of shortwave radiation (also known as solar radiation) measured at the Earth's surface.
+serdif:hasSolarRadiationValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"SolarRadiationValue"@en ;
+	rdfs:comment   		"The flux of shortwave radiation (also known as solar radiation) measured at the Earth's surface." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:MicroW-PER-M2> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/P07/current/CFSN0276/> ;
+.
+
+# Total non-methane hydrocarbons (air) - ug C/m3
+serdif:hasTHCNMValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"THCNMValue"@en ;
+	rdfs:comment   		"Total non-methane hydrocarbons (air) - ug C/m3" ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<http://dd.eionet.europa.eu/vocabulary/uom/concentration/ugC.m-3> ;
+	rdfs:seeAlso		<http://dd.eionet.europa.eu/vocabulary/aq/pollutant/32> ;
+.
+
+# Daily mean wind speed at 10 meter height.
+serdif:hasWindSpeedValue
+	a              		owl:DatatypeProperty , qb:MeasureProperty ;
+	rdfs:label     		"WindSpeedValue"@en ;
+	rdfs:comment   		"Daily mean wind speed at 10 meter height." ;
+	rdfs:subPropertyOf  sdmx-measure:obsValue ;
+	rdfs:range     		xsd:float ;
+	unit:abbreviation 	<unit:M-PER-SEC> ;
+	rdfs:seeAlso		<http://vocab.nerc.ac.uk/collection/A05/current/EV_WSPD/> ;
+.
+
+
+# -- Event Description -----------------------------------------------
+
+serdif:event-A-journey	a	prov:Activity ;
+	rdfs:label 						"event-A journey"@en ;
+	rdfs:comment 				"Event journey parameters to align environmental datasets calculated from the event input data (prov:qualifiedStart): date (prov:atTime) and location (prov:atLocation). The date is used to compute an interval to gather data (prov:startedAtTime, prov:endedAtTime) and the point location (prov:atLocation) is used to select the study area around the event (prov:atLocation). The event journey parameters are a result of a set (prvt:usedGuideline) of SPARQL queries (sp:text)."@en ;
+	# Time of the event
+	prov:qualifiedStart [
+      a prov:Start;
+      prov:entity       	serdif:event-A-input ;
+      prov:atTime       "2011-01-30T00:00:00Z"^^xsd:dateTime ;
+      prov:atLocation   "POINT(8.5490 47.3660)"^^geo:wktLiteral ;
+   ];
+	# Interval of data related to the event
+	prov:startedAtTime 		"2011-01-14T00:00:00Z"^^xsd:dateTime ;
+	prov:endedAtTime 		"2011-01-28T00:00:00Z"^^xsd:dateTime ;
+	# Area of the event
+	prov:atLocation 				"POLYGON ((8.943620550000077 47.375838750000042, 8.935932050000076 47.260639250000082, 8.795788050000027 47.239071250000023, 8.807778550000023 47.22055775000004, 8.714263050000028 47.203163250000046, 8.692463050000043 47.163631250000066, 8.410697050000039 47.248038750000035, 8.45503405000008 47.33367125, 8.357815550000083 47.502464750000058, 8.426542050000023 47.56759625, 8.563081550000078 47.59952125, 8.595710050000093 47.605728250000027, 8.606250050000085 47.668873250000019, 8.663431050000071 47.685905750000018, 8.67049705000008 47.68493675000002, 8.826418050000058 47.646747250000033, 8.739464050000038 47.608116250000023, 8.89870755000004 47.524085750000069, 8.943620550000077 47.375838750000042))"^^geo:wktLiteral, "CH040 - Zürich" ;
+	# -- ORCID for the agent that performed the activity ---------------
+	prov:wasAssociatedWith 	<https://orcid.org/0000-0002-2336-753X> ; 
+	# -- Query to construct the data set -------------------------------
+	prvt:usedGuideline [ 	a prvt:CreationGuideline, prvt:SPARQLquery, sp:Select ;
+							sp:text """
+							
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ramon: <http://rdfdata.eionet.europa.eu/ramon/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX serdif: <https://serdif.adaptcentre.ie/kg/2022/>
+SELECT ?point ?qbDataSet ?areaName	 
+WHERE { 
+    {
+        SELECT ?point ?area ?geo ?areaName
+        WHERE{
+            BIND( "POINT(8.5490 47.3660)"^^geosparql:wktLiteral AS ?point)
+            ?area a geosparql:Feature ;
+                  rdfs:label ?areaName ;
+                  geosparql:hasGeometry/geosparql:asWKT ?geo ;
+                                       ramon:level 3 .
+            FILTER(geof:sfWithin(?point, ?geo))
+        }
+    }
+    GRAPH serdif:metadata {
+        ?qbDataSet a qb:DataSet, geosparql:Feature ;
+                   locn:geometry ?qbGeoB .
+        ?qbGeoB geo:asWKT ?qbGeo.
+    }
+    FILTER(geof:sfWithin(?qbGeo, ?geo))
+}
+    
+							""";
+							sp:text """
+							
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    SELECT ?dateLag ?dateStart
+    WHERE { 
+        BIND(xsd:dateTime("2011-01-30T00:00:00Z") AS ?evDateT)
+        BIND(?evDateT - "P2D"^^xsd:duration AS ?dateLag)
+        BIND(?dateLag - "P14D"^^xsd:duration AS ?dateStart)
+    }
+    
+							""";
+							sp:text """
+							
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ramon: <http://rdfdata.eionet.europa.eu/ramon/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX serdif: <https://serdif.adaptcentre.ie/kg/2022/>
+SELECT ?point ?area ?geo ?areaName
+WHERE{
+    BIND( "POINT(8.5490 47.3660)"^^geosparql:wktLiteral AS ?point)
+    ?area a geosparql:Feature ;
+          rdfs:label ?areaName ;
+          geosparql:hasGeometry/geosparql:asWKT ?geo ;
+                               ramon:level 3 .
+    FILTER(geof:sfWithin(?point, ?geo))
+}
+    
+							"""
+						] ;
+.
+
+serdif:event-A-input a prov:Entity ;
+	rdfs:label 						"event-A input data"@en ;
+	rdfs:comment 				"The event input data refers to the user input of date, location and time-window to select the data from in the serdif:event-A-journey activity."@en ;
+.
+
+serdif:event-B-journey	a	prov:Activity ;
+	rdfs:label 						"event-B journey"@en ;
+	rdfs:comment 				"Event journey parameters to align environmental datasets calculated from the event input data (prov:qualifiedStart): date (prov:atTime) and location (prov:atLocation). The date is used to compute an interval to gather data (prov:startedAtTime, prov:endedAtTime) and the point location (prov:atLocation) is used to select the study area around the event (prov:atLocation). The event journey parameters are a result of a set (prvt:usedGuideline) of SPARQL queries (sp:text)."@en ;
+	# Time of the event
+	prov:qualifiedStart [
+      a prov:Start;
+      prov:entity       	serdif:event-B-input ;
+      prov:atTime       "2011-02-20T00:00:00Z"^^xsd:dateTime ;
+      prov:atLocation   "POINT(9.3852 47.4310)"^^geo:wktLiteral ;
+   ];
+	# Interval of data related to the event
+	prov:startedAtTime 		"2011-02-06T00:00:00Z"^^xsd:dateTime ;
+	prov:endedAtTime 		"2011-02-20T00:00:00Z"^^xsd:dateTime ;
+	# Area of the event
+	prov:atLocation 				"POLYGON ((8.807778550000023 47.22055775000004, 8.795788050000027 47.239071250000023, 8.935932050000076 47.260639250000082, 8.943620550000077 47.375838750000042, 9.06294155000009 47.446350250000052, 9.012053550000076 47.489475250000083, 9.43593805000009 47.506927250000018, 9.449201550000055 47.500915750000075, 9.476066550000013 47.489734750000054, 9.56133655000005 47.500126250000022, 9.674037050000067 47.38879725000001, 9.529959550000086 47.270942750000046, 9.476036050000062 47.051796250000024, 9.54588705 46.976703250000043, 9.452525050000077 46.874618750000053, 9.248874550000068 46.916271250000023, 9.236398050000048 47.023986750000063, 9.138134050000048 47.039188750000051, 9.188602550000041 47.116801750000036, 9.098919050000063 47.13277075000002, 9.003814550000072 47.172462750000051, 8.941090550000013 47.21842175, 8.809363550000086 47.219386750000069, 8.807778550000023 47.22055775000004))"^^geo:wktLiteral, "CH055 - St. Gallen" ;
+	# -- ORCID for the agent that performed the activity ---------------
+	prov:wasAssociatedWith 	<https://orcid.org/0000-0002-2336-753X> ; 
+	# -- Query to construct the data set -------------------------------
+	prvt:usedGuideline [ 	a prvt:CreationGuideline, prvt:SPARQLquery, sp:Select ;
+							sp:text """
+							
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ramon: <http://rdfdata.eionet.europa.eu/ramon/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX serdif: <https://serdif.adaptcentre.ie/kg/2022/>
+SELECT ?point ?qbDataSet ?areaName	 
+WHERE { 
+    {
+        SELECT ?point ?area ?geo ?areaName
+        WHERE{
+            BIND( "POINT(9.3852 47.4310)"^^geosparql:wktLiteral AS ?point)
+            ?area a geosparql:Feature ;
+                  rdfs:label ?areaName ;
+                  geosparql:hasGeometry/geosparql:asWKT ?geo ;
+                                       ramon:level 3 .
+            FILTER(geof:sfWithin(?point, ?geo))
+        }
+    }
+    GRAPH serdif:metadata {
+        ?qbDataSet a qb:DataSet, geosparql:Feature ;
+                   locn:geometry ?qbGeoB .
+        ?qbGeoB geo:asWKT ?qbGeo.
+    }
+    FILTER(geof:sfWithin(?qbGeo, ?geo))
+}
+    
+							""";
+							sp:text """
+							
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    SELECT ?dateLag ?dateStart
+    WHERE { 
+        BIND(xsd:dateTime("2011-02-20T00:00:00Z") AS ?evDateT)
+        BIND(?evDateT - "P0D"^^xsd:duration AS ?dateLag)
+        BIND(?dateLag - "P14D"^^xsd:duration AS ?dateStart)
+    }
+    
+							""";
+							sp:text """
+							
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ramon: <http://rdfdata.eionet.europa.eu/ramon/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX serdif: <https://serdif.adaptcentre.ie/kg/2022/>
+SELECT ?point ?area ?geo ?areaName
+WHERE{
+    BIND( "POINT(9.3852 47.4310)"^^geosparql:wktLiteral AS ?point)
+    ?area a geosparql:Feature ;
+          rdfs:label ?areaName ;
+          geosparql:hasGeometry/geosparql:asWKT ?geo ;
+                               ramon:level 3 .
+    FILTER(geof:sfWithin(?point, ?geo))
+}
+    
+							"""
+						] ;
+.
+
+serdif:event-B-input a prov:Entity ;
+	rdfs:label 						"event-B input data"@en ;
+	rdfs:comment 				"The event input data refers to the user input of date, location and time-window to select the data from in the serdif:event-B-journey activity."@en ;
+.
