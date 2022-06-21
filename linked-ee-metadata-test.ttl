@@ -41,8 +41,8 @@
 
 # -- Data Set ----------------------------------------------------------
 
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891
-	a 							qb:DataSet, geo:Feature, prov:Entity, dcat:Dataset ;
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267
+	a 							qb:DataSet, geo:Feature, prov:Entity, dcat:Dataset, locn:Geometry ;
     dct:title 					"Dataset with air pollution and weather data linked with multiple events related to Rare Disease A"@en ;
     rdfs:label      			"Dataset with air pollution and weather data linked with multiple events related to Rare Disease A"@en ;
     rdfs:comment    		"The dataset is the result of linking air pollution and weather datasets to particular events related to Rare Disease A through space and time. The dataset contains aggregated observations within an area relevant to each particular event and for a time window before the event in DAYS. The data is aggregated using the AVG function."@en ;
@@ -50,7 +50,7 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891
     # After depositing this data set in a repository uncomment the line below and substitute the DOI url link for the appropriate value
     #dct:identifier 			<https://doi.org/10.5281/zenodo.5544257> ;
     dct:hasVersion				"20220524" ;
-    dct:issued      			"2022-06-21T15:51:06.126891Z"^^xsd:dateTime ;
+    dct:issued      			"2022-06-21T16:20:20.210267Z"^^xsd:dateTime ;
     dct:publisher   			<https://www.adaptcentre.ie/>, <https://www.tcd.ie/> ;
 	dct:license 				<https://creativecommons.org/licenses/by-sa/4.0/> ;
 
@@ -66,20 +66,20 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891
         <https://www.wikidata.org/entity/Q11663>		; # Weather
 
     # -- External data sets used to construct this data set ------------
-    dct:hasPart 				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651> ;
+    dct:hasPart 				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104> ;
 
 	# -- Spatial descriptors -------------------------------------------
-	locn:geometry 			serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-geo ;
+	locn:geometry 			serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-geo ;
 
 	# -- Temporal descriptors ------------------------------------------
 	dcat:temporalResolution 	"P1D"^^xsd:duration ;
-	dct:temporal 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-temporal ;
+	dct:temporal 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-temporal ;
 
 	# -- RDF Data cube structure ---------------------------------------
-	qb:structure 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dsd ;
+	qb:structure 				serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-dsd ;
 
 	# -- Activity that constructed the data set ------------------------
-    prov:wasGeneratedBy 		serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-linkage ;
+    prov:wasGeneratedBy 		serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-linkage ;
     prov:wasGeneratedBy  		serdif:event-A-journey ;
 	prov:wasGeneratedBy  		serdif:event-B-journey ;
 	    
@@ -100,7 +100,7 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891
 
 # -- Distribution ------------------------------------------------------
 
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dist
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-dist
 	a 							dcat:Distribution ;
 	dct:license 				<https://creativecommons.org/licenses/by-sa/4.0/> ;
 	dct:title					"Environmental data associated to particular health events of Rare Disease A dataset"@en ;
@@ -113,6 +113,8 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-d
 	dcat:temporalResolution 	"P1D"^^xsd:duration ;
 .
 
+<https://www.iana.org/assignments/media-types/text/turtle> a dct:MediaType .
+
 # -- Agents ------------------------------------------------------------
 <https://orcid.org/0000-0002-2336-753X> a prov:Person, prov:Agent, dpv:DataProcessor .
 
@@ -122,7 +124,7 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-d
 
 # -- Period of time included in the data set ---------------------------
 
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-temporal
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-temporal
 	a 						dct:PeriodOfTime ;
 	rdfs:comment    		"Time interval defined by the maximum and minimum date available taking into account all events"@en ;
 	dcat:startDate 			"2011-01-01T00:00:00Z"^^xsd:dateTime ;
@@ -130,18 +132,18 @@ serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-t
 .
 
 # -- Region geometries -------------------------------------------------
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-geo
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-geo
 	a 						geo:Geometry ;
 	geo:asWKT 	"POLYGON ((8.943620550000077 47.375838750000042, 8.935932050000076 47.260639250000082, 8.795788050000027 47.239071250000023, 8.807778550000023 47.22055775000004, 8.714263050000028 47.203163250000046, 8.692463050000043 47.163631250000066, 8.410697050000039 47.248038750000035, 8.45503405000008 47.33367125, 8.357815550000083 47.502464750000058, 8.426542050000023 47.56759625, 8.563081550000078 47.59952125, 8.595710050000093 47.605728250000027, 8.606250050000085 47.668873250000019, 8.663431050000071 47.685905750000018, 8.67049705000008 47.68493675000002, 8.826418050000058 47.646747250000033, 8.739464050000038 47.608116250000023, 8.89870755000004 47.524085750000069, 8.943620550000077 47.375838750000042))"^^geo:wktLiteral, "POLYGON ((8.807778550000023 47.22055775000004, 8.795788050000027 47.239071250000023, 8.935932050000076 47.260639250000082, 8.943620550000077 47.375838750000042, 9.06294155000009 47.446350250000052, 9.012053550000076 47.489475250000083, 9.43593805000009 47.506927250000018, 9.449201550000055 47.500915750000075, 9.476066550000013 47.489734750000054, 9.56133655000005 47.500126250000022, 9.674037050000067 47.38879725000001, 9.529959550000086 47.270942750000046, 9.476036050000062 47.051796250000024, 9.54588705 46.976703250000043, 9.452525050000077 46.874618750000053, 9.248874550000068 46.916271250000023, 9.236398050000048 47.023986750000063, 9.138134050000048 47.039188750000051, 9.188602550000041 47.116801750000036, 9.098919050000063 47.13277075000002, 9.003814550000072 47.172462750000051, 8.941090550000013 47.21842175, 8.809363550000086 47.219386750000069, 8.807778550000023 47.22055775000004))"^^geo:wktLiteral ;
 .
 
 # -- Data provenance and lineage ---------------------------------------
 
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-linkage
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-linkage
 	# -- Type of activity ----------------------------------------------
 	a 						prov:Activity, prvt:DataCreation ;
 	# -- External data sets used in the activity -----------------------
-	prov:used  				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651> ;
+	prov:used  				<https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.90468_47.47979999946529>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.875_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.523539999999999_47.3708999994651>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.125_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=8.625_47.625>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.386519999999999_47.4288999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.375_47.125>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=9.39438_47.406699999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=meteo&source=e-obs-copernicus&version=v24e&point=9.625_47.375>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.6134_47.4028999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.73184_47.500199999465295>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.539810000000001_47.386799999465104>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.57012_47.4386999994652>, <https://serdif.adaptcentre.ie/kg/2022/dataset#type=airquality&source=eea&version=vE1a&point=8.53041_47.377599999465104> ;
 	# -- ORCID for the agent that performed the activity ---------------
 	prov:wasAssociatedWith 	<https://orcid.org/0000-0002-2336-753X> ;
 	# -- Activity explanation for humans -------------------------------
@@ -209,7 +211,7 @@ serdif:DataUse
 .
 
 # -- Data structure definition -----------------------------------------
-serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2015%3A51%3A06.126891-dsd
+serdif-dataset:linked-ee-dataset-v20220524-QT_2022-06-21%2016%3A20%3A20.210267-dsd
         a             qb:DataStructureDefinition ;
         rdfs:comment  "RDF Data Cube data structure definition for event-environmental linked observations (multi-measure approach) provided with variable normals and standard deviation values providing historical context for each particular event."@en ;
 		qb:component
@@ -534,7 +536,7 @@ serdif:hasWindSpeedValue
 
 # -- Event Description -----------------------------------------------
 
-serdif:event-A-journey	a	prov:Activity ;
+serdif:event-A-journey	a	prov:Activity, prvt:DataCreation ;
 	rdfs:label 						"event-A journey"@en ;
 	rdfs:comment 				"Event journey parameters to align environmental datasets calculated from the event input data (prov:qualifiedStart): date (prov:atTime) and location (prov:atLocation). The date is used to compute an interval to gather data (prov:startedAtTime, prov:endedAtTime) and the point location (prov:atLocation) is used to select the study area around the event (prov:atLocation). The event journey parameters are a result of a set (prvt:usedGuideline) of SPARQL queries (sp:text)."@en ;
 	# Time of the event
@@ -633,7 +635,7 @@ serdif:event-A-input a prov:Entity ;
 	rdfs:comment 				"The event input data refers to the user input of date, location and time-window to select the data from in the serdif:event-A-journey activity."@en ;
 .
 
-serdif:event-B-journey	a	prov:Activity ;
+serdif:event-B-journey	a	prov:Activity, prvt:DataCreation ;
 	rdfs:label 						"event-B journey"@en ;
 	rdfs:comment 				"Event journey parameters to align environmental datasets calculated from the event input data (prov:qualifiedStart): date (prov:atTime) and location (prov:atLocation). The date is used to compute an interval to gather data (prov:startedAtTime, prov:endedAtTime) and the point location (prov:atLocation) is used to select the study area around the event (prov:atLocation). The event journey parameters are a result of a set (prvt:usedGuideline) of SPARQL queries (sp:text)."@en ;
 	# Time of the event
